@@ -12,8 +12,8 @@
         <result property="petBreed"    column="pet_breed"    />
         <result property="petAge"    column="pet_age"    />
         <result property="symptom"    column="symptom"    />
-        <result property="reserveDate"    column="reserve_date"    />
-        <result property="reserveTime"    column="reserve_time"    />
+        <result property="date"    column="date"    />
+        <result property="time"    column="time"    />
         <result property="doctorId"    column="doctor_id"    />
         <result property="vaccineId"    column="vaccine_id"    />
         <result property="userId"    column="user_id"    />
@@ -27,12 +27,12 @@
     </resultMap>
 
     <sql id="selectReservationVo">
-        select reservation_id, type, status, pet_name, pet_breed, pet_age, symptom, reserve_date, reserve_time, doctor_id, vaccine_id, user_id, create_time from reservation
+        select reservation_id, type, status, pet_name, pet_breed, pet_age, symptom, date, time, doctor_id, vaccine_id, user_id, create_time from reservation
     </sql>
 
     <select id="selectReservationList" parameterType="Reservation" resultMap="ReservationResult">
         select r.reservation_id, r.type, r.status, r.pet_name, r.pet_breed, r.pet_age, r.symptom,
-        r.reserve_date, r.reserve_time, r.doctor_id, r.vaccine_id, r.user_id, r.create_time,
+        r.date, r.time, r.doctor_id, r.vaccine_id, r.user_id, r.create_time,
         d.name, d.title, d.specialty, d.photo,
         v.name as vaccineName,
         u.user_name
@@ -47,7 +47,7 @@
             <if test="petName != null  and petName != ''"> and r.pet_name like concat('%', #{petName}, '%')</if>
             <if test="doctorId != null  and doctorId != ''"> and r.doctor_id = #{doctorId}</if>
             <if test="vaccineId != null  and vaccineId != ''"> and r.vaccine_id = #{vaccineId}</if>
-            <if test="reserveDate != null and reserveDate != ''"> and r.reserve_date = #{reserveDate}</if>
+            <if test="date != null and date != ''"> and r.date = #{date}</if>
             <if test="name != null  and name != ''"> and d.name like concat('%', #{name}, '%')</if>
             <if test="vaccineName != null  and vaccineName != ''">
                 and v.name like concat('%', #{vaccineName}, '%')
@@ -58,7 +58,7 @@
 
     <select id="selectReservationByReservationId" parameterType="String" resultMap="ReservationResult">
         select r.reservation_id, r.type, r.status, r.pet_name, r.pet_breed, r.pet_age, r.symptom,
-               r.reserve_date, r.reserve_time, r.doctor_id, r.vaccine_id, r.user_id, r.create_time,
+               r.date, r.time, r.doctor_id, r.vaccine_id, r.user_id, r.create_time,
                d.name, d.title, d.specialty, d.photo,
                v.name as vaccineName,
                u.user_name
@@ -85,8 +85,8 @@
             <if test="petBreed != null and petBreed != ''">pet_breed,</if>
             <if test="petAge != null">pet_age,</if>
             <if test="symptom != null and symptom != ''">symptom,</if>
-            <if test="reserveDate != null and reserveDate != ''">reserve_date,</if>
-            <if test="reserveTime != null and reserveTime != ''">reserve_time,</if>
+            <if test="date != null and date != ''">date,</if>
+            <if test="time != null and time != ''">time,</if>
             <if test="doctorId != null">doctor_id,</if>
             <if test="vaccineId != null">vaccine_id,</if>
             <if test="userId != null">user_id,</if>
@@ -100,8 +100,8 @@
             <if test="petBreed != null and petBreed != ''">#{petBreed},</if>
             <if test="petAge != null">#{petAge},</if>
             <if test="symptom != null and symptom != ''">#{symptom},</if>
-            <if test="reserveDate != null and reserveDate != ''">#{reserveDate},</if>
-            <if test="reserveTime != null and reserveTime != ''">#{reserveTime},</if>
+            <if test="date != null and date != ''">#{date},</if>
+            <if test="time != null and time != ''">#{time},</if>
             <if test="doctorId != null">#{doctorId},</if>
             <if test="vaccineId != null">#{vaccineId},</if>
             <if test="userId != null">#{userId},</if>
@@ -118,8 +118,8 @@
             <if test="petBreed != null and petBreed != ''">pet_breed = #{petBreed},</if>
             <if test="petAge != null">pet_age = #{petAge},</if>
             <if test="symptom != null and symptom != ''">symptom = #{symptom},</if>
-            <if test="reserveDate != null and reserveDate != ''">reserve_date = #{reserveDate},</if>
-            <if test="reserveTime != null and reserveTime != ''">reserve_time = #{reserveTime},</if>
+            <if test="date != null and date != ''">date = #{date},</if>
+            <if test="time != null and time != ''">time = #{time},</if>
             <if test="doctorId != null">doctor_id = #{doctorId},</if>
             <if test="vaccineId != null">vaccine_id = #{vaccineId},</if>
             <if test="userId != null">user_id = #{userId},</if>

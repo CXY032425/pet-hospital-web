@@ -14,7 +14,7 @@
     <artifactId>pet-hospital</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>PetHospital</name>
-    <description>宠物医院管理端</description>
+    <description>EDG宠物医院管理端</description>
 
     <properties>
         <java.version>17</java.version>
@@ -30,7 +30,6 @@
         <fastjson.version>2.0.53</fastjson.version>
         <commons.io.version>2.13.0</commons.io.version>
         <poi.version>4.1.2</poi.version>
-        <velocity.version>2.3</velocity.version>
         <jjwt.version>0.12.3</jjwt.version>
     </properties>
 
@@ -104,12 +103,6 @@
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${poi.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity-engine-core</artifactId>
-            <version>${velocity.version}</version>
         </dependency>
 
         <dependency>

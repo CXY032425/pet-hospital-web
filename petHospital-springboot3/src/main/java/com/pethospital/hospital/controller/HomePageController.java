@@ -87,7 +87,7 @@ public class HomePageController extends BaseController {
             //创建预约查询条件对象
             Reservation reservation = new Reservation();
             //设置查询日期
-            reservation.setReserveDate(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            reservation.setDate(date.format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
             //查询指定日期的预约记录数量
             int count = reservationService.selectReservationList(reservation).size();
             //将日期和对应的预约数量添加到列表中

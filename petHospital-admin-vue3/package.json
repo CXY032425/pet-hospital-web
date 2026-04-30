@@ -1,7 +1,7 @@
 {
   "name": "pet-hospital",
   "version": "1.0.0",
-  "description": "宠物医院管理端",
+  "description": "EDG宠物医院管理端",
   "author": "cxy",
   "license": "MIT",
   "type": "module",

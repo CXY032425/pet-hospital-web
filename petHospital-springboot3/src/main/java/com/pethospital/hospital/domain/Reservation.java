@@ -47,11 +47,11 @@ public class Reservation extends BaseEntity
 
     /** 预约日期 */
     @Excel(name = "预约日期")
-    private String reserveDate;
+    private String date;
 
     /** 预约时间 */
     @Excel(name = "预约时间")
-    private String reserveTime;
+    private String time;
 
     /** 医生ID */
     @Excel(name = "医生ID")
